@@ -8,12 +8,12 @@ package Demo;
  *
  * @author janip
  */
-public class Vizitka extends javax.swing.JFrame {
+public class Pomoč extends javax.swing.JFrame {
 
     /**
-     * Creates new form Vizitka
+     * Creates new form Navodila
      */
-    public Vizitka() {
+    public Pomoč() {
         initComponents();
     }
 
@@ -26,39 +26,33 @@ public class Vizitka extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("BRICK");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 30, 75, 32);
-
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("BREAKER");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(100, 50, 117, 32);
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Verzija 1.0");
+        jLabel3.setText("BREAKER");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 200, 90, 24);
+        jLabel3.setBounds(60, 100, 200, 47);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Ustvaril: Jani Pahor, 2.RB");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 230, 210, 15);
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("BRICK");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 60, 150, 47);
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Ploščico premikaš z puščicama levo in desno ");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(10, 220, 390, 20);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,14 +63,14 @@ public class Vizitka extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 260, 67, 25);
+        jButton1.setBounds(310, 260, 64, 25);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/VizitkaOzadje.jpg.png"))); // NOI18N
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 0, 250, 310);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/brickbreakerozadje3.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(0, 0, 400, 300);
 
-        setSize(new java.awt.Dimension(266, 339));
+        setSize(new java.awt.Dimension(416, 339));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -101,30 +95,30 @@ public class Vizitka extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vizitka.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pomoč.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vizitka.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pomoč.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vizitka.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pomoč.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vizitka.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pomoč.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Vizitka().setVisible(true);
+                new Pomoč().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

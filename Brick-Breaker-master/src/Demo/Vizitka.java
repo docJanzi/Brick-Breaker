@@ -31,6 +31,7 @@ public class Vizitka extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -50,9 +51,9 @@ public class Vizitka extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Verzija 1.0");
+        jLabel3.setText("Mentor: Aljaz Gec");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(80, 200, 90, 24);
+        jLabel3.setBounds(50, 200, 150, 24);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,7 +70,13 @@ public class Vizitka extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(160, 260, 67, 25);
+        jButton1.setBounds(160, 260, 63, 23);
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Verzija 1.0");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(80, 180, 90, 24);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/VizitkaOzadje.jpg.png"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -126,5 +133,6 @@ public class Vizitka extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

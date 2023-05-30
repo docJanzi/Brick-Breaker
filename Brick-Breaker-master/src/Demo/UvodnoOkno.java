@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Demo;
+
 /**
  *
  * @author janip
@@ -14,7 +15,6 @@ public class UvodnoOkno extends javax.swing.JFrame {
      */
     public UvodnoOkno() {
         initComponents();
-      
     }
 
     /**
@@ -33,10 +33,9 @@ public class UvodnoOkno extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -66,7 +65,7 @@ public class UvodnoOkno extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(210, 320, 170, 51);
+        jButton1.setBounds(210, 340, 170, 50);
 
         jButton2.setBackground(new java.awt.Color(102, 0, 51));
         jButton2.setFont(new java.awt.Font("GrilledCheese BTN Wide Blk", 0, 18)); // NOI18N
@@ -79,19 +78,11 @@ public class UvodnoOkno extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(470, 400, 100, 30);
+        jButton2.setBounds(480, 420, 100, 30);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/BrickBreakerOzadje.jpg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 600, 500);
-
-        jMenu5.setText("Igraj");
-        jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu5MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu5);
 
         jMenu4.setText("Vizitka");
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,6 +92,9 @@ public class UvodnoOkno extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu4);
 
+        jMenu5.setText("Igraj");
+        jMenuBar2.add(jMenu5);
+
         jMenu1.setText("Navodila");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -109,17 +103,9 @@ public class UvodnoOkno extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu1);
 
-        jMenu6.setText("Izhod");
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu6);
-
         setJMenuBar(jMenuBar2);
 
-        setSize(new java.awt.Dimension(618, 547));
+        setSize(new java.awt.Dimension(616, 539));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -127,27 +113,17 @@ public class UvodnoOkno extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new GamePlay().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
         new Vizitka().setVisible(true);
     }//GEN-LAST:event_jMenu4MouseClicked
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        new Pomoč().setVisible(true);
+        new Navodila().setVisible(true);
     }//GEN-LAST:event_jMenu1MouseClicked
 
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jMenu6MouseClicked
-
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        new GamePlay().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu5MouseClicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,7 +169,6 @@ public class UvodnoOkno extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
