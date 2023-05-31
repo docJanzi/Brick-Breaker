@@ -52,7 +52,7 @@ public class Pomoč extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ploščico premikaš z puščicama levo in desno ");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 220, 390, 20);
+        jLabel5.setBounds(40, 220, 390, 20);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));

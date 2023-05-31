@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Demo;
 
 import java.awt.Color;
@@ -11,13 +7,15 @@ import java.awt.event.KeyEvent;
  *
  * @author janip
  */
+
 public class GamePlay extends javax.swing.JFrame implements Runnable{
-    int x,y,sy=5,sx=5;
+    int x,y,sy=5,sx=5,spd = 10;
+    static int brickSt;
     //Runnable r1 = new timer();
     Thread t1;
     boolean ThreadIsRunning = true;
-    boolean d=false; 
-    boolean l=false;
+    boolean desno=false; 
+    boolean levo=false;
         
     public GamePlay() {
         initComponents(); 
@@ -25,8 +23,7 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
         getContentPane().setBackground(Color.GRAY);
         x = 290;
         y = 430;     
-        boolean w=false; 
-        boolean s=false;
+        brickSt=24;
         ball.setLocation(x, y);
         t1 = new Thread(this);
         t1.start();
@@ -37,23 +34,27 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
             while (ThreadIsRunning) {
                     x = x+sx;
                     y = y-sy;
-                    if (x>580) {
+                    if (x>580 && sx>0) {
                         sx = sx*(-1);
                     }
                     if (y<0) {
                         sy = sy*(-1);                        
                     }
-                    if (x<0) {
+                    if (x<0 && sx<0) {
                         sx = sx*(-1);
                     }
                     
                     if ((x>racket.getX() && x+ball.getWidth()<racket.getX()+racket.getWidth())&&y+ball.getHeight()>=racket.getY()) {
+                        if (x<racket.getX()+(racket.getWidth()/2)&&sx>0 || x>racket.getX()+(racket.getWidth()/2)&&sx<0) {
+                            sx = -sx;                            
+                        }
                         sy = sy*(-1);
+                            
                     }
-                    if (y>480) {                        
-                        new KonecIgre().setVisible(true);
-                        dispose();                      
-                        t1.stop();                    
+                    if (y>500) {                        
+                        new KonecIgre().setVisible(true);                        
+                        dispose();
+                        t1.stop();                                            
                     }
                     
                     collisions(jLabel1);
@@ -83,6 +84,19 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
                     
                     
                     ball.setLocation(x,y);
+                    if (levo == true) {
+                        if (0 <= racket.getX()) {
+                            racket.setLocation(racket.getX()-spd, 450);
+                        }                       
+
+                    }
+                    if (desno == true) {
+                        if (racket.getX()<600-racket.getWidth()) {
+                            racket.setLocation(racket.getX()+spd, 450);
+                        }
+                        
+
+                    }
                     try {
                         t1.sleep(1000/40);
                     }
@@ -114,8 +128,15 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
             if(dol<gor && desno<levo && dol == desno || dol<gor && desno>levo && dol == levo || dol>gor && desno<levo && gor == desno || dol>gor && desno>levo && gor == levo) {
                 sy=sy*(-1);
                 sx=sx*(-1);  
-            }
+            }            
             jLabelx.setIcon(null);
+            jLabelx.setLocation(500, 530);
+            brickSt--;            
+            if (brickSt<1) {
+                new KonecIgre().setVisible(true);
+                dispose();                      
+                t1.stop();                    
+            }
         }
     }
 
@@ -164,9 +185,9 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
 
         jMenuItem2.setText("jMenuItem2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 500));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         racket.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/podlaga.jpg"))); // NOI18N
         racket.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -178,86 +199,113 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
                 racketKeyReleased(evt);
             }
         });
-        getContentPane().add(racket, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, -1, -1));
+        getContentPane().add(racket);
+        racket.setBounds(220, 450, 150, 11);
 
         ball.setForeground(new java.awt.Color(255, 255, 255));
         ball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/ball.jpg"))); // NOI18N
-        getContentPane().add(ball, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, -1, 20));
+        getContentPane().add(ball);
+        ball.setBounds(290, 430, 20, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(370, 40, 55, 25);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(300, 40, 55, 25);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(230, 40, 55, 25);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(440, 40, 55, 25);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(160, 40, 55, 25);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(90, 40, 55, 25);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, -1, -1));
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(370, 80, 55, 25);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(300, 80, 55, 25);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(230, 80, 55, 25);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, -1, -1));
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(440, 80, 55, 25);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(160, 80, 55, 25);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(90, 80, 55, 25);
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(370, 120, 55, 25);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(300, 120, 55, 25);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(230, 120, 55, 25);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, -1));
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(440, 120, 55, 25);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(160, 120, 55, 25);
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, -1));
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(90, 120, 55, 25);
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, -1, -1));
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(370, 160, 55, 25);
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(300, 160, 55, 25);
 
         jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, -1, -1));
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(230, 160, 55, 25);
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(440, 160, 55, 25);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(160, 160, 55, 25);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/opeka.png"))); // NOI18N
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(90, 160, 55, 25);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/istockphoto-992155792-170667a.jpg"))); // NOI18N
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(0, -20, 600, 500);
 
         jMenu2.setText("Domov");
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,7 +323,7 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
         });
         jMenuBar2.add(jMenu4);
 
-        jMenu1.setText("Navodila");
+        jMenu1.setText("Pomoč");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu1MouseClicked(evt);
@@ -299,11 +347,10 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
 
     private void racketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_racketKeyPressed
         int keyCode = evt.getKeyCode();
-        int stepSize = 20;
         if (keyCode == KeyEvent.VK_LEFT) {
-            racket.setLocation(racket.getX() - stepSize, racket.getY());
+            levo = true;
         } else if (keyCode == KeyEvent.VK_RIGHT) {
-            racket.setLocation(racket.getX() + stepSize, racket.getY());
+           desno = true;
         }
     }//GEN-LAST:event_racketKeyPressed
 
@@ -325,7 +372,12 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void racketKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_racketKeyReleased
-        // TODO add your handling code here:
+        int keyCode = evt.getKeyCode();
+        if (keyCode == KeyEvent.VK_LEFT) {
+            levo = false;
+        } else if (keyCode == KeyEvent.VK_RIGHT) {
+           desno = false;
+        }
     }//GEN-LAST:event_racketKeyReleased
 
     /**

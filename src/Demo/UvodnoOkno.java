@@ -41,19 +41,17 @@ public class UvodnoOkno extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("GrilledCheese BTN Wide Blk", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BREAKER");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 160, 340, 110);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 340, 110));
 
         jLabel2.setFont(new java.awt.Font("GrilledCheese BTN Wide Blk", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("BRICK");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 60, 310, 110);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 310, 110));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("GrilledCheese BTN Wide Blk", 0, 36)); // NOI18N
@@ -65,8 +63,7 @@ public class UvodnoOkno extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(210, 320, 170, 51);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 170, -1));
 
         jButton2.setBackground(new java.awt.Color(102, 0, 51));
         jButton2.setFont(new java.awt.Font("GrilledCheese BTN Wide Blk", 0, 18)); // NOI18N
@@ -78,12 +75,10 @@ public class UvodnoOkno extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(470, 400, 100, 30);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, 100, 30));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/BrickBreakerOzadje.jpg"))); // NOI18N
-        getContentPane().add(Background);
-        Background.setBounds(0, 0, 600, 500);
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenu5.setText("Igraj");
         jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,7 +96,7 @@ public class UvodnoOkno extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu4);
 
-        jMenu1.setText("Navodila");
+        jMenu1.setText("Pomoč");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu1MouseClicked(evt);
