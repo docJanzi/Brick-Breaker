@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
  */
 
 public class GamePlay extends javax.swing.JFrame implements Runnable{
-    int x,y,sy=5,sx=5,spd = 10;
+    int x,y,sy=4,sx=4,spd = 10;
     static int brickSt;
     //Runnable r1 = new timer();
     Thread t1;
@@ -98,7 +98,7 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
 
                     }
                     try {
-                        t1.sleep(1000/40);
+                        t1.sleep(1000/60);
                     }
                     catch(Exception e) {}
             }
@@ -174,12 +174,13 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -303,9 +304,9 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
         getContentPane().add(jLabel24);
         jLabel24.setBounds(90, 160, 55, 25);
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/istockphoto-992155792-170667a.jpg"))); // NOI18N
-        getContentPane().add(jLabel25);
-        jLabel25.setBounds(0, -20, 600, 500);
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/backgroundForBrickBreaker.jpg"))); // NOI18N
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(0, -30, 600, 500);
 
         jMenu2.setText("Domov");
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -338,6 +339,14 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
             }
         });
         jMenuBar2.add(jMenu6);
+
+        jMenu3.setText("Oujea");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu3);
 
         setJMenuBar(jMenuBar2);
 
@@ -379,6 +388,10 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
            desno = false;
         }
     }//GEN-LAST:event_racketKeyReleased
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        new Oujea().setVisible(true);        
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -434,7 +447,7 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -444,6 +457,7 @@ public class GamePlay extends javax.swing.JFrame implements Runnable{
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar2;
