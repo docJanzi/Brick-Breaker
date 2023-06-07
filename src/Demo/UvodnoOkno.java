@@ -3,18 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Demo;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author janip
  */
 public class UvodnoOkno extends javax.swing.JFrame {
 
+    static int radioB;
+    static String user;
+
     /**
      * Creates new form UvodnoOkno
      */
     public UvodnoOkno() {
         initComponents();
-      
     }
 
     /**
@@ -27,17 +32,22 @@ public class UvodnoOkno extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -47,20 +57,12 @@ public class UvodnoOkno extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Eras Demi ITC", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BREJKER");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 340, 110));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 340, 110));
 
         jLabel2.setFont(new java.awt.Font("Eras Demi ITC", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("BRIK");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 310, 110));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/playbutton.jpg"))); // NOI18N
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 310, 110));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/exitbutton.jpg"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -68,10 +70,43 @@ public class UvodnoOkno extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, -1, -1));
 
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Eras Bold ITC", 0, 16)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("2. stopnja");
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Eras Bold ITC", 0, 16)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton2.setText("3.stopnja");
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/playbutton.jpg"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, -1, -1));
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setFont(new java.awt.Font("Eras Bold ITC", 0, 16)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton3.setText("1. stopnja");
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Eras Bold ITC", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("IZBERITE TEŽAVNOSTNO STOPNJO: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+
+        Background.setBackground(new java.awt.Color(204, 255, 255));
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/backgroundForBrickBreaker.jpg"))); // NOI18N
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 600, 500));
 
         jMenu5.setText("Igraj");
         jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,14 +132,6 @@ public class UvodnoOkno extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu1);
 
-        jMenu6.setText("Izhod");
-        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu6MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu6);
-
         jMenu3.setText("Oujea");
         jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -113,9 +140,17 @@ public class UvodnoOkno extends javax.swing.JFrame {
         });
         jMenuBar2.add(jMenu3);
 
+        jMenu6.setText("Izhod");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu6);
+
         setJMenuBar(jMenuBar2);
 
-        setSize(new java.awt.Dimension(618, 547));
+        setSize(new java.awt.Dimension(616, 539));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,17 +167,43 @@ public class UvodnoOkno extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu6MouseClicked
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        new GamePlay().setVisible(true);
-        dispose();
+        if (jRadioButton3.isSelected()) {
+            new GamePlay1().setVisible(true);
+            radioB = 1;
+            dispose();
+        } else if (jRadioButton1.isSelected()) {
+            new GamePlay2().setVisible(true);
+            radioB = 2;
+            dispose();
+        } else if (jRadioButton2.isSelected()) {
+            new GamePlay3().setVisible(true);
+            radioB = 3;
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Izberi težavnostno stopnjo!");
+        }
     }//GEN-LAST:event_jMenu5MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        new GamePlay().setVisible(true);
-        dispose();
+        if (jRadioButton3.isSelected()) {
+            new GamePlay1().setVisible(true);
+            radioB = 1;
+            dispose();
+        } else if (jRadioButton1.isSelected()) {
+            new GamePlay2().setVisible(true);
+            radioB = 2;
+            dispose();
+        } else if (jRadioButton2.isSelected()) {
+            new GamePlay3().setVisible(true);
+            radioB = 3;
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Izberi težavnostno stopnjo!");
+        }
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
@@ -186,8 +247,10 @@ public class UvodnoOkno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
@@ -197,5 +260,8 @@ public class UvodnoOkno extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     // End of variables declaration//GEN-END:variables
 }

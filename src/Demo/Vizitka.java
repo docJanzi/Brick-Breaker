@@ -35,25 +35,22 @@ public class Vizitka extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Eras Bold ITC", 0, 22)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Verzija 1.0");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(140, 150, 230, 32);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 230, 32));
 
         jLabel4.setFont(new java.awt.Font("Eras Bold ITC", 0, 22)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Mentorja: Aljaž Gec, Tomaž Mavri");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 180, 430, 30);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 430, 30));
 
         jLabel7.setFont(new java.awt.Font("Eras Bold ITC", 0, 22)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Avtor: Jani Pahor, 2.RB");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 210, 350, 30);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 350, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/zapributton.jpg"))); // NOI18N
         jLabel6.setText("jLabel1");
@@ -62,25 +59,21 @@ public class Vizitka extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(150, 250, 100, 38);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 100, -1));
 
         jLabel9.setFont(new java.awt.Font("Eras Demi ITC", 1, 48)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("BRIK");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(70, 40, 119, 56);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Eras Demi ITC", 1, 48)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("BREJKER");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(150, 90, 224, 56);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Photos/backgroundForBrickBreaker2.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, -10, 400, 310);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 400, 340));
 
         setSize(new java.awt.Dimension(416, 339));
         setLocationRelativeTo(null);

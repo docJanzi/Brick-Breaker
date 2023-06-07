@@ -46,11 +46,11 @@ public class Pomoč extends javax.swing.JFrame {
         jLabel1.setBounds(160, 240, 100, 38);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Gill Sans MT", 0, 20)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Calibri", 1, 17)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Ploščico premikaš z puščicama levo in desno ");
+        jLabel5.setText("Ploščico premikaš s puščicama levo (←) in desno (→)");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(20, 170, 390, 20);
+        jLabel5.setBounds(20, 190, 369, 30);
 
         jLabel3.setFont(new java.awt.Font("Eras Demi ITC", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
